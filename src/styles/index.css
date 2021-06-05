@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+a {
+  @apply text-blue-600;
+}
+
+.-z-1 {
+  z-index: -1;
+}
+
+.origin-0 {
+  transform-origin: 0%;
+}
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+  /* @apply transform; scale-75; -translate-y-6; */
+  @apply z-0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-scale-x: 0.75;
+  --tw-scale-y: 0.75;
+  --tw-translate-y: -1.5rem;
+}
+
+input:focus ~ label,
+select:focus ~ label {
+  --tw-text-opacity: 1;
+}
+
+.has-errors input:focus ~ label,
+.has-errors select:focus ~ label {
+  @apply text-red-600;
+}
+.has-errors input {
+  @apply border border-red-600;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.fa-icon {
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-style: normal;
+  font-feature-settings: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-weight: 900;
+}
+.form-select:after {
+  @apply absolute right-4 top-4;
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  font-style: normal;
+  font-feature-settings: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  font-size: 1.3em;
+  @apply fa-icon;
+}
+.password:after {
+  @apply absolute right-4 top-4;
+  content: "\f06e";
+  font-size: 1em;
+  @apply fa-icon;
+}
+
+.form-group {
+  @apply relative z-0 w-full mb-5;
+}
+.form-control {
+  @apply pt-3 pb-2 block w-full px-4 mt-0 mb-2 bg-transparent border rounded appearance-none focus:outline-none focus:ring-0 border-gray-200;
+}
+
+button:disabled {
+  @apply bg-gray-100 text-gray-500;
+}
